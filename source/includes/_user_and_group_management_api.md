@@ -27,6 +27,13 @@ Returns a single user and associated groups.
 ### HTTP Request
 ```GET management/v1/user/{{ user_id }}```
 
+### Request Path Params
+
+Path Param | Required | Description
+---------- | -------- | -----------
+user_id | true | The ID of the user you are wanting to retrieve
+
+
 __Response Codes__: 
   
 - `200 OK ` status code on sucess
@@ -72,6 +79,14 @@ Returns all users. This is a paginated response - returning 100 results per page
 
 ### HTTP Request
 ```GET management/v1/users?pageToken={{pageTokenHere}}```
+
+
+### Request Params
+
+Param | Required | Description
+----- | -------- | -----------
+pageToken | false | The page token (taken from either `nextPageToken`, or `previousPageToken` provided in the response) for the page you of results you want to view.
+
 
 __Response Codes__: 
   
@@ -276,6 +291,12 @@ Returns all groups. This is a paginated response - returning 100 results per pag
 
 ### HTTP Request
 `GET management/v1/groups?pageToken={{pageTokenHere}}`
+
+### Request Params
+
+Param | Required | Description
+----- | -------- | -----------
+pageToken | false | The page token (taken from either `nextPageToken`, or `previousPageToken` provided in the response) for the page you of results you want to view.
 
 __Response Codes__: 
   
