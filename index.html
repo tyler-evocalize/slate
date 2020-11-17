@@ -372,13 +372,35 @@
 x-evocalize-timestamp: 1604094273
 x-evocalize-signature: 690a0ac5a5a219bb4a773f5bc116a32553be4e8380845d854f07b5e8471bc954
 Content-Type: application/json
-</span></code></pre></div>
-<ul>
-<li>X-Evocalize-Client-Key-Id: Provided by Evocalize. </li>
-<li>X-Evocalize-Timestamp: Time Since Epoch in seconds. ex: 1604094273. Requests with a timestamp over a minute old will not be accepted.</li>
-<li>X-Evocalize-Signature: Signature of the payload. See Signing Requests Below.</li>
-<li>Content-Type: application/json</li>
-</ul>
+</span></code></pre></div><h3 id='header-info'>Header info</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Evocalize-Client-Key-Id</td>
+<td>true</td>
+<td>Client Key provided by Evocalize</td>
+</tr>
+<tr>
+<td>X-Evocalize-Timestamp</td>
+<td>true</td>
+<td>Time Since Epoch in seconds. ex: 1604094273. Requests with a timestamp over a minute old will not be accepted.</td>
+</tr>
+<tr>
+<td>X-Evocalize-Signature</td>
+<td>true</td>
+<td>Signature of the payload. See Signing Requests Below.</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>true</td>
+<td><code>application/json</code></td>
+</tr>
+</tbody></table>
 <h2 id='signing-requests'>Signing Requests:</h2>
 <blockquote>
 <p>Request signing example</p>
@@ -481,6 +503,20 @@ Content-Type: application/json
 <p>Returns a single user and associated groups. </p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET management/v1/user/{{ user_id }}</code></p>
+<h3 id='request-path-params'>Request Path Params</h3>
+<table><thead>
+<tr>
+<th>Path Param</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>true</td>
+<td>The ID of the user you are wanting to retrieve</td>
+</tr>
+</tbody></table>
 
 <p><strong>Response Codes</strong>: </p>
 
@@ -522,6 +558,20 @@ Content-Type: application/json
 <p>Returns all users. This is a paginated response - returning 100 results per page.  </p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET management/v1/users?pageToken={{pageTokenHere}}</code></p>
+<h3 id='request-params'>Request Params</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pageToken</td>
+<td>false</td>
+<td>The page token (taken from either <code>nextPageToken</code>, or <code>previousPageToken</code> provided in the response) for the page you of results you want to view.</td>
+</tr>
+</tbody></table>
 
 <p><strong>Response Codes</strong>: </p>
 
@@ -713,6 +763,20 @@ Content-Type: application/json
 <p>Returns all groups. This is a paginated response - returning 100 results per page.  </p>
 <h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET management/v1/groups?pageToken={{pageTokenHere}}</code></p>
+<h3 id='request-params-2'>Request Params</h3>
+<table><thead>
+<tr>
+<th>Param</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pageToken</td>
+<td>false</td>
+<td>The page token (taken from either <code>nextPageToken</code>, or <code>previousPageToken</code> provided in the response) for the page you of results you want to view.</td>
+</tr>
+</tbody></table>
 
 <p><strong>Response Codes</strong>: </p>
 
