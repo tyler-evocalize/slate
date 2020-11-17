@@ -22,10 +22,14 @@ x-evocalize-signature: 690a0ac5a5a219bb4a773f5bc116a32553be4e8380845d854f07b5e84
 Content-Type: application/json
 ```
 
-- X-Evocalize-Client-Key-Id: Provided by Evocalize. 
-- X-Evocalize-Timestamp: Time Since Epoch in seconds. ex: 1604094273. Requests with a timestamp over a minute old will not be accepted.
-- X-Evocalize-Signature: Signature of the payload. See Signing Requests Below.
-- Content-Type: application/json
+### Header info
+
+Header | Required | Description
+------ | -------- | -----------
+X-Evocalize-Client-Key-Id | true | Client Key provided by Evocalize
+X-Evocalize-Timestamp | true |Time Since Epoch in seconds. ex: 1604094273. Requests with a timestamp over a minute old will not be accepted.
+X-Evocalize-Signature | true |Signature of the payload. See Signing Requests Below.
+Content-Type | true | `application/json`
 
 
 ## Signing Requests: 
