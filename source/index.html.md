@@ -8,7 +8,7 @@ includes:
 
 # Introduction
 
-Welcome to the Evocalize management API. This API allows you to manage users, groups and user group associations.
+Welcome to the Evocalize management API. This API is designed for end users of the Evocalize Developer Tools platform.
 
 # Request And Response Info
 
@@ -82,8 +82,8 @@ For security and identity purposes, we require all partners to sign all API requ
   "errors": [
     {
       "message": "String", // Always prsent in null case
+      "code": "String",
       "field" : "String", // Omitted if null
-      "code": "String", // Omitted if null
       "details": <JSON Object> // Omitted if null
     }
   ],
@@ -93,7 +93,7 @@ For security and identity purposes, we require all partners to sign all API requ
 }
 ```
 
-> Success Response Example: 
+> Example Success Response: 
 
 ```json
 {
@@ -103,13 +103,14 @@ For security and identity purposes, we require all partners to sign all API requ
 }
 ```
 
-> Error Response:
+> Example Error Response:
 
 ```json
 {
   "errors": [
     {
-      "message": "Unauthorized Request"
+      "message": "Unauthorized Request",
+      "code": "EV_UNAUTHORIZED_MISSING_HEADERS"
     }
   ]
 }
