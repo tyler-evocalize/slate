@@ -279,8 +279,8 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+    <link href="stylesheets/screen-c2914c33.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-b92d75a2.css" rel="stylesheet" media="print" />
       <script src="javascripts/all_nosearch-ec00d1ce.js"></script>
 
   </head>
@@ -368,11 +368,11 @@
 <blockquote>
 <p>Example Headers</p>
 </blockquote>
-<div class="highlight"><pre class="highlight http tab-http"><code><span class="err">x-evocalize-client-key-id: a5646c38-fc29-11e9-8f0b-362b9e155667
+<div class="highlight"><pre class="highlight plaintext"><code>x-evocalize-client-key-id: a5646c38-fc29-11e9-8f0b-362b9e155667
 x-evocalize-timestamp: 1604094273
 x-evocalize-signature: 690a0ac5a5a219bb4a773f5bc116a32553be4e8380845d854f07b5e8471bc954
 Content-Type: application/json
-</span></code></pre></div><h3 id='header-info'>Header info</h3>
+</code></pre></div><h3 id='header-info'>Header info</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -437,27 +437,22 @@ Content-Type: application/json
 <p>JSON Response Schema</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="err">//</span><span class="w"> </span><span class="err">Omitted</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="nl">"metaData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"&lt;JSON Object&gt;"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="err">//</span><span class="w"> </span><span class="err">Omitted</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">case</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">response</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"&lt;Request Specifc JSON Response&gt;"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="err">//</span><span class="w"> </span><span class="err">Omitted</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">case</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">success</span><span class="w"> </span><span class="err">response</span><span class="w">
   </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Always</span><span class="w"> </span><span class="err">prsent</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="err">case</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"field"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Omitted</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="kc">null</span><span class="w">
-      </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;JSON</span><span class="w"> </span><span class="err">Object&gt;</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Omitted</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="nl">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;JSON Object&gt;"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Omitted</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="err">//</span><span class="w"> </span><span class="err">Only</span><span class="w"> </span><span class="err">present</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">results</span><span class="w"> </span><span class="err">exceed</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="err">items.</span><span class="w">
-  </span><span class="nl">"nextPageToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Appears</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">pages</span><span class="w"> </span><span class="err">but</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">last</span><span class="w">
-  </span><span class="nl">"previousPageToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Appears</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">pages</span><span class="w"> </span><span class="err">but</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">first</span><span class="w">
-</span><span class="p">}</span><span class="w">
+  </span><span class="nl">"nextPageToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
+  </span><span class="nl">"previousPageToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="w">
 </span></code></pre></div>
 <blockquote>
 <p>Example Success Response: </p>
@@ -480,7 +475,41 @@ Content-Type: application/json
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>All requests are returned as JSON wrapped in a standard response format. The Schema section shows all the potential fields that we could. By convention, we do not transmit null values. Most responses will follow the Examples provided. </p>
+<p>All requests are returned as JSON wrapped in a standard response format. The Schema section shows all the potential fields that we could return. Do note that we do not transmit null values. The most common responses will look like the examples provided.</p>
+
+<table><thead>
+<tr>
+<th>Schema Field</th>
+<th>Always Present</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>metadata</td>
+<td>false</td>
+<td>JSON object containing extra data around requests and responses.</td>
+</tr>
+<tr>
+<td>data</td>
+<td>false</td>
+<td>Returned for requests that result with 2xx responses.</td>
+</tr>
+<tr>
+<td>errors</td>
+<td>false</td>
+<td>Returned for requests that result in non 2xx responses.</td>
+</tr>
+<tr>
+<td>nextPageToken</td>
+<td>false</td>
+<td>Page token appears for result sets larger than 100 items. Not present on last page of results.</td>
+</tr>
+<tr>
+<td>previousPageToken</td>
+<td>false</td>
+<td>Same logic as nextPageToken. Not present on first page of results.</td>
+</tr>
+</tbody></table>
 <h1 id='user-management-api'>User Management API</h1><h2 id='get-user'>Get User</h2>
 <blockquote>
 <p>Get User Response</p>
@@ -503,17 +532,19 @@ Content-Type: application/json
 </span></code></pre></div>
 <p>Returns a single user and associated groups. </p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET management/v1/user/{{ user_id }}</code></p>
-<h3 id='request-path-params'>Request Path Params</h3>
+<p><code>GET management/v1/user/{{ userId }}</code></p>
+<h3 id='url-params'>URL Params</h3>
 <table><thead>
 <tr>
-<th>Path Param</th>
+<th>URL Param</th>
+<th>type</th>
 <th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>user_id</td>
+<td>userId</td>
+<td>String</td>
 <td>true</td>
 <td>The ID of the user you are wanting to retrieve</td>
 </tr>
@@ -558,7 +589,7 @@ Content-Type: application/json
 </span></code></pre></div>
 <p>Returns all users. This is a paginated response - returning 100 results per page.  </p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET management/v1/users?pageToken={{pageTokenHere}}</code></p>
+<p><code>GET management/v1/users</code></p>
 <h3 id='request-params'>Request Params</h3>
 <table><thead>
 <tr>
@@ -584,15 +615,14 @@ Content-Type: application/json
 <p>Create Request Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">Groups</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">optional</span><span class="w"> </span><span class="err">property</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-       </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
-        </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="w">
+        </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
+          </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="w">
       </span><span class="p">},</span><span class="w">
     </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w"> 
     </span><span class="p">]</span><span class="w">
@@ -602,20 +632,18 @@ Content-Type: application/json
 <p>Update Request Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test User"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-  </span><span class="nl">"replaceGroups"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="err">/</span><span class="kc">false</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="p">,</span><span class="w"> </span><span class="err">defaults</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="kc">false</span><span class="w">
-  </span><span class="err">//</span><span class="w"> </span><span class="err">Groups</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">optional</span><span class="w"> </span><span class="err">property</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test User"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"replaceGroups"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56468"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56468"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8675309"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group_admin"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-    </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w"> 
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
-
+  </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <blockquote>
@@ -637,11 +665,111 @@ Content-Type: application/json
 </span></code></pre></div>
 <p>This endpoint allows you to create or update a user and their group associations. You are able to call this endpoint and omit the groups property. In Create case the user would be created, but not be associated to any groups. In the case of update we would only update their name and or email.</p>
 
-<p>When <code>completedGroups</code> is true, we will REMOVE all groups currently associated to the user, replacing them with the groups provided in the list. </p>
-
 <p>The group you want to associate with the user MUST exist prior to making this call.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST management/v1/user/</code></p>
+<h3 id='create-user-request-properties'>Create User Request Properties</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>String</td>
+<td>ID of the user you are creating. This needs to be unique and immutable.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>true</td>
+<td>Email for the user you are creating.</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>true</td>
+<td>Full name of the user you are creating.</td>
+<td></td>
+</tr>
+<tr>
+<td>groups</td>
+<td>false</td>
+<td>Array of UserGroupAssociation objects. If this is not present on create or update, no groups will be added.</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id='update-user-request-properties'>Update User Request Properties</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>String</td>
+<td>ID of the user you are updating.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>false</td>
+<td>String</td>
+<td>Email for the user you are creating.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>false</td>
+<td>String</td>
+<td>Full name of the user you are creating.</td>
+</tr>
+<tr>
+<td>replaceGroups</td>
+<td>false</td>
+<td>boolean</td>
+<td>When <code>replaceGroups</code> is true, we will REMOVE all groups currently associated to the user, replacing them with the groups provided in the list. By default this is false.</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>false</td>
+<td>JSON Array</td>
+<td>JSON Array of UserGroupAssociation objects. If this is not present on create or update the users group associations will remain unmodified.</td>
+</tr>
+</tbody></table>
+<h3 id='user-group-association-properties'>User Group Association Properties</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>true</td>
+<td>String</td>
+<td>The Id of the user.</td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>true</td>
+<td>String</td>
+<td>The Id of the group you want the user associated to.</td>
+</tr>
+<tr>
+<td>role</td>
+<td>true</td>
+<td>String</td>
+<td>The role of the user within the group.</td>
+</tr>
+</tbody></table>
 
 <p><strong>Valid group roles</strong>: </p>
 
@@ -662,10 +790,9 @@ Content-Type: application/json
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Required</span><span class="w">
-      </span><span class="err">//</span><span class="w"> </span><span class="err">Groups</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">optional</span><span class="w"> </span><span class="err">property</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
     </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
       </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
@@ -683,18 +810,17 @@ Content-Type: application/json
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"String"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Test User"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-      </span><span class="nl">"replaceGroups"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="err">/</span><span class="kc">false</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="p">,</span><span class="w"> </span><span class="err">defaults</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="kc">false</span><span class="w">
-      </span><span class="err">//</span><span class="w"> </span><span class="err">Groups</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">optional</span><span class="w"> </span><span class="err">property</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"String"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"user@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Test User"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"replaceGroups"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nl">"groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56468"</span><span class="p">,</span><span class="w"> 
         </span><span class="nl">"groupId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8675309"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group_admin"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-          </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w"> 
+      </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w"> 
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="w">
@@ -710,6 +836,8 @@ Content-Type: application/json
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Endpoint that allows you to pass a JSON Array of User Request objects for creation or updating. Batches are limited to 1000 items at a time. The creation option is asynchronous - rather than returning the newly created items, you will receive a <code>report_id</code> which can be used to track status of the requests as they are processed in our system. Reports are stored for 30 days. </p>
+
+<p>The JSON objects passed in the array are the same as the ones listed in Create Or Update User.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST management/v1/users/</code></p>
 
@@ -757,13 +885,13 @@ Content-Type: application/json
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group 4"</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"nextPageToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"longtokenstringgoeshere"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">present</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">there</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">more</span><span class="w"> </span><span class="err">pages</span><span class="w">
-  </span><span class="nl">"previousPageToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"differenttokenstringgoeshere"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">present</span><span class="w"> </span><span class="err">when</span><span class="w"> 
+  </span><span class="nl">"nextPageToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"longtokenstringgoeshere"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"previousPageToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"differenttokenstringgoeshere"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns all groups. This is a paginated response - returning 100 results per page.  </p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET management/v1/groups?pageToken={{pageTokenHere}}</code></p>
+<p><code>GET management/v1/groups</code></p>
 <h3 id='request-params-2'>Request Params</h3>
 <table><thead>
 <tr>
@@ -802,8 +930,32 @@ Content-Type: application/json
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Group 1"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='http-request-7'>HTTP Request</h3>
+</span></code></pre></div>
+<p>Endpoint for creating new groups or updating existing ones.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST management/v1/group/</code></p>
+<h3 id='create-update-group-properties'>Create / Update Group Properties</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>String</td>
+<td>ID of the group you wish to create or update.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>true</td>
+<td>String</td>
+<td>The Name of the group you are creating or updating.</td>
+</tr>
+</tbody></table>
 
 <p><strong>Response Codes</strong>: </p>
 
@@ -859,6 +1011,22 @@ Content-Type: application/json
 <p>For batch endpoints we return a <code>report_id</code> string instead of the created objects. This endpoint allows you to view the status of a given batch. We retain this data for 30 days.</p>
 <h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET management/v1/items/report/{{ reportId }}</code></p>
+<h3 id='url-params-2'>URL Params</h3>
+<table><thead>
+<tr>
+<th>URL Param</th>
+<th>Required</th>
+<th>type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reportId</td>
+<td>true</td>
+<td>String</td>
+<td>The ID of the report you are wanting to retrieve</td>
+</tr>
+</tbody></table>
 
 <p><strong>Response Codes</strong>:</p>
 
