@@ -15,7 +15,7 @@ Welcome to the Evocalize management API. This API is designed for end users of t
 ## Headers
 > Example Headers
 
-```http
+```
 x-evocalize-client-key-id: a5646c38-fc29-11e9-8f0b-362b9e155667
 x-evocalize-timestamp: 1604094273
 x-evocalize-signature: 690a0ac5a5a219bb4a773f5bc116a32553be4e8380845d854f07b5e8471bc954
@@ -70,27 +70,22 @@ For security and identity purposes, we require all partners to sign all API requ
 
 ```json
 {
-  // Omitted if null
-  "metaData": {
+  "metadata": {
     "<JSON Object>"
   },
-  // Omitted in the case of an error response
   "data": {
     "<Request Specifc JSON Response>"
   },
-  // Omitted in the case of a success response
   "errors": [
     {
-      "message": "String", // Always prsent in null case
+      "message": "String",
       "code": "String",
       "field" : "String", // Omitted if null
-      "details": <JSON Object> // Omitted if null
+      "details": "<JSON Object>" // Omitted if null
     }
   ],
-  // Only present when results exceed 100 items.
-  "nextPageToken": "String", // Appears on all pages but the last
-  "previousPageToken": "String" // Appears on all pages but the first
-}
+  "nextPageToken": "String", 
+  "previousPageToken": "String"
 ```
 
 > Example Success Response: 
@@ -116,4 +111,13 @@ For security and identity purposes, we require all partners to sign all API requ
 }
 ```
 
-All requests are returned as JSON wrapped in a standard response format. The Schema section shows all the potential fields that we could. By convention, we do not transmit null values. Most responses will follow the Examples provided. 
+All requests are returned as JSON wrapped in a standard response format. The Schema section shows all the potential fields that we could return. Do note that we do not transmit null values. The most common responses will look like the examples provided.
+
+
+Schema Field | Always Present | Description
+------------ | -------------- | -----------
+metadata | false | JSON object containing extra data around requests and responses. 
+data | false | Returned for requests that result with 2xx responses.
+errors | false | Returned for requests that result in non 2xx responses.
+nextPageToken | false | Page token appears for result sets larger than 100 items. Not present on last page of results.
+previousPageToken | false | Same logic as nextPageToken. Not present on first page of results.

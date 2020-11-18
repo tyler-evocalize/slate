@@ -25,13 +25,13 @@
 Returns a single user and associated groups. 
 
 ### HTTP Request
-```GET management/v1/user/{{ user_id }}```
+```GET management/v1/user/{{ userId }}```
 
-### Request Path Params
+### URL Params
 
-Path Param | Required | Description
----------- | -------- | -----------
-user_id | true | The ID of the user you are wanting to retrieve
+URL Param | type | Required | Description
+--------- | ---- | -------- | -----------
+userId | String | true | The ID of the user you are wanting to retrieve
 
 
 __Response Codes__: 
@@ -78,7 +78,7 @@ __Response Codes__:
 Returns all users. This is a paginated response - returning 100 results per page.  
 
 ### HTTP Request
-```GET management/v1/users?pageToken={{pageTokenHere}}```
+```GET management/v1/users```
 
 
 ### Request Params
@@ -99,15 +99,14 @@ __Response Codes__:
 
 ```json
 {
-	"id": "String", // Required
-	"email": "String", // Required
-	"name": "String", // Required
-    // Groups is an optional property
+	"id": "String", 
+	"email": "String", 
+	"name": "String",
 	"groups": [
 	  {
-	   "userId": "String", 
-		"groupId": "String",
-		"role": "String"
+	    "userId": "String", 
+		  "groupId": "String",
+		  "role": "String"
 	  },
     // ... 
 	]
@@ -118,20 +117,18 @@ __Response Codes__:
  
 ```json
 {
-	"id": "String", 
-	"email": "user@example.com", // Optional
-	"name": "Test User", // Optional
-  "replaceGroups": true/false // Optional, defaults to false
-  // Groups is an optional property
+	"id": "String",
+	"email": "user@example.com",
+	"name": "Test User",
+	"replaceGroups": false,
 	"groups": [
 		{
-			"userId": "56468", 
+			"userId": "56468",
 			"groupId": "8675309",
 			"role": "group_admin"
-		},
-    // ... 
+		}
 	]
-
+  // ...
 }
 ```
 
@@ -155,12 +152,38 @@ __Response Codes__:
 
 This endpoint allows you to create or update a user and their group associations. You are able to call this endpoint and omit the groups property. In Create case the user would be created, but not be associated to any groups. In the case of update we would only update their name and or email.
 
-When `completedGroups` is true, we will REMOVE all groups currently associated to the user, replacing them with the groups provided in the list. 
 
 The group you want to associate with the user MUST exist prior to making this call.
 
 ### HTTP Request
 `POST management/v1/user/`
+
+### Create User Request Properties
+
+Field | Required | Type | Description
+----- | -------- | ---- | -----------
+id | true | String | ID of the user you are creating. This needs to be unique and immutable.
+email | true | Email for the user you are creating.
+name | true | Full name of the user you are creating.
+groups | false | Array of UserGroupAssociation objects. If this is not present on create or update, no groups will be added. 
+
+### Update User Request Properties
+
+Field | Required | Type | Description
+----- | -------- | ---- | -----------
+id | true | String | ID of the user you are updating.
+email | false | String | Email for the user you are creating.
+name | false | String |  Full name of the user you are creating.
+replaceGroups | false | boolean | When `replaceGroups` is true, we will REMOVE all groups currently associated to the user, replacing them with the groups provided in the list. By default this is false.
+groups | false | JSON Array | JSON Array of UserGroupAssociation objects. If this is not present on create or update the users group associations will remain unmodified.
+
+### User Group Association Properties
+
+Field | Required | Type | Description
+----- | -------- | ---- | -----------
+userId | true | String | The Id of the user.
+groupId | true | String | The Id of the group you want the user associated to.
+role | true | String | The role of the user within the group. 
 
 __Valid group roles__: 
 
@@ -179,10 +202,9 @@ __Response Codes__:
 ``` json
 [
   {
-    "id": "String", // Required
-    "email": "String", // Required
-    "name": "String", // Required
-      // Groups is an optional property
+    "id": "String", 
+    "email": "String", 
+    "name": "String", 
     "groups": [
       {
       "userId": "String", 
@@ -201,18 +223,17 @@ __Response Codes__:
 ```json
 [
   {
-    "id":"String", 
-    "email":"user@example.com", // Optional
-    "name":"Test User", // Optional
-      "replaceGroups": true/false // Optional, defaults to false
-      // Groups is an optional property
+    "id":"String",
+    "email":"user@example.com",
+    "name":"Test User",
+    "replaceGroups": false,
     "groups": [
       {
         "userId": "56468", 
         "groupId": "8675309",
         "role": "group_admin"
       },
-          // ... 
+      // ... 
     ]
   },
   // ...
@@ -230,6 +251,8 @@ __Response Codes__:
 ```
 
 Endpoint that allows you to pass a JSON Array of User Request objects for creation or updating. Batches are limited to 1000 items at a time. The creation option is asynchronous - rather than returning the newly created items, you will receive a `report_id` which can be used to track status of the requests as they are processed in our system. Reports are stored for 30 days. 
+
+The JSON objects passed in the array are the same as the ones listed in Create Or Update User.
 
 ### HTTP Request
 ```POST management/v1/users/```
@@ -282,15 +305,15 @@ __Response Codes__:
       "name": "Test Group 4",
     }
   ],
-  "nextPageToken": "longtokenstringgoeshere", // only present when there are more pages
-  "previousPageToken": "differenttokenstringgoeshere" // only present when 
+  "nextPageToken": "longtokenstringgoeshere",
+  "previousPageToken": "differenttokenstringgoeshere"
 }
 ```
 
 Returns all groups. This is a paginated response - returning 100 results per page.  
 
 ### HTTP Request
-`GET management/v1/groups?pageToken={{pageTokenHere}}`
+`GET management/v1/groups`
 
 ### Request Params
 
@@ -323,8 +346,17 @@ __Response Codes__:
   }
 }
 ```
+
+Endpoint for creating new groups or updating existing ones.
+
 ### HTTP Request
 ```POST management/v1/group/```
+
+### Create / Update Group Properties
+Field | Required | Type | Description
+----- | -------- | ---- | -----------
+id | true | String | ID of the group you wish to create or update.
+name | true | String | The Name of the group you are creating or updating.
 
 __Response Codes__: 
 
@@ -388,6 +420,12 @@ For batch endpoints we return a `report_id` string instead of the created object
 
 ### HTTP Request
 `GET management/v1/items/report/{{ reportId }}`
+
+### URL Params
+
+URL Param | Required | type | Description
+--------- | -------- | ---- | -----------
+reportId | true | String |The ID of the report you are wanting to retrieve
 
 __Response Codes__:
 
